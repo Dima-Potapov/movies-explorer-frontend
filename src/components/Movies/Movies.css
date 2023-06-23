@@ -1,0 +1,32 @@
+.movies {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.movies__button_action_more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  width: 320px;
+  height: 36px;
+  margin: 50px auto 80px;
+}
+
+.movies__button_action_more:hover {
+  background-color: #e9e9e9;
+}
+
+@media screen and (max-width: 320px) {
+  .movies__button_action_more {
+    width: 240px;
+    margin: 50px auto 80px;
+  }
+}

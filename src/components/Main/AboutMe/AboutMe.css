@@ -1,0 +1,158 @@
+.AboutMe {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 110px 70px 90px 70px;
+}
+
+.personality {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap-reverse;
+  justify-content: space-between;
+  padding: 66px 0px 100px 0px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.personality__info {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 2 2 50%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.personality__subtitle {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  mix-blend-mode: normal;
+  padding: 0;
+  padding-top: 18px;
+  margin: 0;
+}
+
+.personality__text {
+  color: #000;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 22px;
+  mix-blend-mode: normal;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px;
+  padding: 0;
+  padding-top: 26px;
+  margin: 0;
+}
+
+.personality__list {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  margin-top: auto;
+}
+
+.personality__item {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.personality__link {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  transition: .6s ease-out;
+}
+
+.personality__link:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.personality__photo {
+  width: 270px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex: 0 0 270px;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .AboutMe {
+    padding: 90px 50px;
+  }
+
+  .personality {
+    padding: 66px 0px 90px 0px;
+  }
+
+  .personality__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 16px;
+  }
+
+  .personality__text {
+    max-width: 364px;
+    line-height: 18px;
+    font-size: 12px;
+    padding-top: 20px;
+  }
+
+  .personality__photo {
+    flex-basis: 255px;
+    width: 255px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .personality__info {
+    margin-top: 40px;
+    flex-basis: 100%;
+  }
+
+  .personality__text {
+    max-width: 100%;
+  }
+
+  .personality__list {
+    margin-top: 40px;
+  }
+
+  .personality__photo {
+    width: 292px;
+    flex-basis: 292px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .AboutMe {
+    padding: 70px 14px;
+  }
+
+  .personality {
+    padding: 60px 0px 69px 0px;
+  }
+
+  .personality__subtitle {
+    font-size: 11px;
+    line-height: 16px;
+    padding-top: 20px;
+  }
+
+  .personality__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+}

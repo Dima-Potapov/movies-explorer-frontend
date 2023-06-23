@@ -1,0 +1,51 @@
+.round-button {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  bottom: 265px;
+  left: 465px;
+}
+
+.round-button__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.round-button__tick {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, .09);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  transition: .6s ease-out;
+}
+
+.round-button__tick:hover {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, .39);
+}
+
+.round-button__tick:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  transition: .6s ease-out;
+}
+
+.round-button__input:checked ~ .round-button__tick::after {
+  background-color: #EE3465;
+}
