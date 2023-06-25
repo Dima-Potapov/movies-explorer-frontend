@@ -17,7 +17,7 @@ function CheckBox(props) {
         onChange={handleChange}
       />
 
-      <span className="round-button__tick"/>
+      <span className="round-button__tick">Сохранить</span>
     </label>
   );
 }

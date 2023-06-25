@@ -29,6 +29,7 @@ function NavHeader(props) {
                  activeClassName="menu__link_active"
                  className="menu__link menu__link_profile"
         >
+
           Аккаунт
         </NavLink>
 

@@ -17,6 +17,7 @@ const SearchForm = (props) => (
           name="search-input"
           className="search__input search__box"
           placeholder="Фильм"
+          required
         />
 
         <Button userClass="search__button"/>

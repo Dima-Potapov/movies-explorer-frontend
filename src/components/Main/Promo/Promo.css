@@ -12,7 +12,7 @@
 
 .promo__container {
   width: 100%;
-  padding: 50px 70px 60px 70px;
+  padding: 50px 70px 60px 45px;
 }
 
 .promo__title {
@@ -22,7 +22,7 @@
   line-height: 52px;
   letter-spacing: -0.04em;
   text-align: left;
-  filter: drop-shadow(0px 0px 4px #000);
+  text-shadow: 0 4px #C7C7C7;
 }
 
 .promo__image {

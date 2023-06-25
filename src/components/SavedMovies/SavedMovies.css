@@ -13,6 +13,9 @@
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
+  position: absolute;
+  top: 14px;
+  right: 14px;
 }
 
 .saved-movies__button_delete:hover {

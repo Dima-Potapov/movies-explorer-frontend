@@ -62,8 +62,9 @@
   line-height: 36px;
 }
 
-.timetable__chart_green {
+.timetable__chart_blue {
   background-color: #3456F3;
+  color: #fff;
 }
 
 .timetable__chart_gray {

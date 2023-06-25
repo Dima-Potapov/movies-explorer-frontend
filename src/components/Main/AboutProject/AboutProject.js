@@ -29,7 +29,7 @@ function AboutProject() {
       </ul>
 
       <div className="timetable change">
-        <p className="timetable__text timetable__chart timetable__chart_green">
+        <p className="timetable__text timetable__chart timetable__chart_blue">
           1 неделя
         </p>
         <p className="timetable__text timetable__chart timetable__chart_gray">

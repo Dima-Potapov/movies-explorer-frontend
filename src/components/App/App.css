@@ -17,3 +17,7 @@
 .change {
   transition: .6s ease-out;
 }
+
+/* #root {
+  overflow: hidden;
+} */
