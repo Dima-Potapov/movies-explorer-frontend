@@ -38,17 +38,23 @@
   margin-left: 16px;
 }
 
+.menu__link-icon {
+  margin-right: 6px;
+}
+
 .menu__link_profile {
-  background-image: url(../../images/profile-icon.svg);
-  background-repeat: no-repeat;
-  background-position: 8px 50%;
-  background-size: 11px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: solid 1px #AAAAAA;
   border-radius: 20px;
   font-weight: 500;
   line-height: 32px;
   width: 100px;
   height: 32px;
+}
+
+.menu__link_profile:not(.menu__link_mobile-menu) {
   margin-left: 50px;
 }
 
@@ -67,7 +73,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .menu__link {
+  .menu__link:not(.menu__link_mobile-menu) {
     display: none;
   }
 
