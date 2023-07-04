@@ -1,0 +1,22 @@
+.MainHeadline {
+  color: #000000;
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: normal;
+  width: 100%;
+  letter-spacing: -0.04em;
+  text-align: left;
+  border-bottom: 1px solid #000;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 23px;
+}
+
+@media screen and (max-width: 320px) {
+  .MainHeadline {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 28px;
+  }
+}

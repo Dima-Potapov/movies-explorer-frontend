@@ -1,0 +1,23 @@
+.saved-movies {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.saved-movies__button_delete {
+  background-image: url(../../images/delete-btn-icon.svg);
+  width: 21px;
+  height: 21px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.saved-movies__button_delete:hover {
+  opacity: .6;
+}
