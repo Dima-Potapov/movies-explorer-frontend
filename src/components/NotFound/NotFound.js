@@ -3,9 +3,7 @@ import Button from '../Button/Button';
 import './NotFound.css';
 
 function NotFound({history}) {
-  const handleClick = () => {
-    history.goBack();
-  }
+  const handleClick = () => history.goBack();
 
   return (
     <section className="not-found change">

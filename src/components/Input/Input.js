@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.css';
 
-function Input({onChange, errorId, children, ...rest}) {
+function Input({errorId, children, errorText, ...rest}) {
   return (
     <div className="input input__box">
       <label className="input__label input__box">
@@ -10,12 +10,14 @@ function Input({onChange, errorId, children, ...rest}) {
 
       <input
         className="input__item input__box"
-        onChange={onChange}
         {...rest}
       />
 
-      <span className="input__error input__box" id={errorId}>
-      Что-то пошло не так...
+      <span
+        className={`input__error input__box ${errorText ? 'input__error_show' : ''}`}
+        id={errorId}
+      >
+      {errorText}
     </span>
     </div>
   );

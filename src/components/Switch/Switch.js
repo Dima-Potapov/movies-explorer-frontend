@@ -1,20 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Switch.css';
 
-function Switch(props) {
-  const [isChecked, setIsChecked] = useState(props.isChecked);
-
-  const handleChange = (e) => {
-    setIsChecked(e.target.checked);
-  };
-
+function Switch({ isChecked, onChange, isDisabled }) {
   return (
     <label className="switch change">
       <input
         type="checkbox"
         className="switch__input"
         checked={isChecked}
-        onChange={handleChange}
+        onChange={onChange}
+        disabled={isDisabled}
       />
 
       <span className="switch__slider"/>

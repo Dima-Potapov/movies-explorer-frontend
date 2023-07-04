@@ -51,3 +51,7 @@
   line-height: 12px;
   margin-top: 10px;
 }
+
+.input__error_show {
+  display: block;
+}

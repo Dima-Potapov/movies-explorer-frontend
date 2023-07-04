@@ -88,6 +88,26 @@
   color: #EE3465;
 }
 
+.profile__error {
+  color: #EE3465;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: center;
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.profile__success {
+  color: #359636;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: center;
+  margin-bottom: 18px;
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .profile__form {
     padding-top: 236px;

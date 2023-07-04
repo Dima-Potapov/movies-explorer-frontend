@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Header from '../../Header/Header';
 import NavTab from '../NavTab/NavTab';
 import './Promo.css';
+import { CurrentUserContext } from '../../../contexts/CurrentUserContext';
+import Navigation from '../../Navigation/Navigation';
 
 function Promo() {
+  const currentUser = useContext(CurrentUserContext);
+
   return (
     <section className="promo promo__block">
       <Header>
-        <NavTab/>
+        {currentUser.email ? <Navigation theme="blue"/> : <NavTab />}
       </Header>
 
       <div className="promo__block promo__container">
