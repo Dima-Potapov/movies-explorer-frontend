@@ -5,7 +5,7 @@ function DeleteButton({onDelete, movie}) {
   const handleDelete = () => onDelete(movie);
 
   return (
-    <Button userClass="saved-movies__btn_delete" onClick={handleDelete}/>
+    <Button userClass="saved-movies__button_delete" onClick={handleDelete}/>
   );
 }
 

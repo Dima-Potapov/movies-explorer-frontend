@@ -16,7 +16,7 @@
 .search__form {
   overflow: hidden;
   display: flex;
-  flex-flow: row nowrap;
+  /*flex-flow: row nowrap;*/
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
@@ -29,7 +29,7 @@
   flex-grow: 2;
   border-radius: 40px;
   display: flex;
-  flex-flow: row nowrap;
+  /*flex-flow: row nowrap;*/
   justify-content: space-between;
   align-items: center;
 }
@@ -154,8 +154,7 @@
 @media screen and (max-width: 500px) {
   .search__input {
     background-image: none;
-    padding: 25px 0px;
-    padding-left: 19px;
+    padding: 10px 0 10px 19px;
   }
 }
 
