@@ -13,7 +13,7 @@ export function useFormWithValidation() {
     setValues({...values, [name]: value});
     setErrors({...errors, [name]: target.validationMessage });
 
-    if (target.pattern) {
+    if ((target.required && value) && target.pattern) {
       const regex = new RegExp(target.pattern, "i");
 
       if (!regex.test(value)) {
