@@ -20,6 +20,9 @@ export const LS_SWITCH_DURATION = 'switchDuration';
 export const LS_VISIBLE_MOVIES = 'visibleMovies';
 export const LS_JWT = 'jwt';
 
+export const PATTERN_NAME = '^[a-zа-я -]+$';
+
+
 export const usersApiBaseUrl = 'https://api.dimapotapov.student.nomoredomains.rocks';
 export const authApiBaseUrl = 'https://api.dimapotapov.student.nomoredomains.rocks';
 export const searchMoviesApiBaseUrl = 'https://api.nomoreparties.co';

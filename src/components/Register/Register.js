@@ -39,7 +39,7 @@ function Register({ resetMessage, onRegister, ...props }) {
           type="text"
           id="name"
           name="name"
-          pattern="^[a-zа-я -]+$"
+          // pattern="^[a-zа-я -]+$"
           placeholder="Имя"
           required
           errorId="name-error"
@@ -55,7 +55,7 @@ function Register({ resetMessage, onRegister, ...props }) {
           name="email"
           maxLength="40"
           minLength="2"
-          pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$"
+          // pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$"
           placeholder="E-mail"
           required
           errorId="email-error"

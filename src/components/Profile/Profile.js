@@ -118,7 +118,7 @@ function Profile({onLogout}) {
             id="email"
             name="email"
             className={`profile__item profile__text ${errors.email ? 'profile__text_error' : ''}`}
-            pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$"
+            // pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$"
             placeholder="Почта"
             value={values.email}
             required

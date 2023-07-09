@@ -32,7 +32,7 @@ function Login({resetMessage, onLogin, history, ...props}) {
           id="email"
           name="email"
           placeholder="E-mail"
-          pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$"
+          // pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$"
           required
           errorId="email-error"
           errorText={errors.email}

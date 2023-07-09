@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
-import { NOT_VALID_DEFAULT, NOT_VALID_EMAIL, NOT_VALID_NAME } from '../utils/const';
+import { NOT_VALID_EMAIL, NOT_VALID_NAME, PATTERN_NAME } from '../utils/const';
+import isEmail from "validator/es/lib/isEmail";
 
 export function useFormWithValidation() {
   const [values, setValues] = useState({});
@@ -10,34 +11,43 @@ export function useFormWithValidation() {
     const target = event.target;
     const { name, value } = target;
 
+    let isValid = true;
+
     setValues({...values, [name]: value});
 
-    if (!target.validationMessage && target.pattern) {
-      const regex = new RegExp(target.pattern, "i");
-
-      if (!regex.test(value)) {
-        switch (name) {
-          case 'email':
+    if (!target.validationMessage) {
+      switch (name) {
+        case 'email':
+          if (!isEmail(value)) {
             setErrors({...errors, [name]: NOT_VALID_EMAIL });
 
-            break;
-          case 'name':
+            isValid = false;
+          }
+
+          break;
+        case 'name':
+          const regex = new RegExp(PATTERN_NAME, "i");
+
+          if (
+            !regex.test(value) ||
+            (value.split(' ').length - 1) > 1
+          ) {
             setErrors({...errors, [name]: NOT_VALID_NAME });
 
-            break;
-          default:
-            setErrors({...errors, [name]: NOT_VALID_DEFAULT });
+            isValid = false;
+          }
 
-            break;
-        }
-      } else {
+          break;
+      }
+
+      if (isValid) {
         setErrors({...errors, [name]: '' });
       }
     } else {
       setErrors({...errors, [name]: target.validationMessage });
     }
 
-    setIsValid(target.closest("form").checkValidity());
+    setIsValid(target.closest("form").checkValidity() ?? isValid);
   };
 
   const resetForm = useCallback(
