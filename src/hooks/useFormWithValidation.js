@@ -11,9 +11,8 @@ export function useFormWithValidation() {
     const { name, value } = target;
 
     setValues({...values, [name]: value});
-    setErrors({...errors, [name]: target.validationMessage });
 
-    if ((target.required && value) && target.pattern) {
+    if (!target.validationMessage && target.pattern) {
       const regex = new RegExp(target.pattern, "i");
 
       if (!regex.test(value)) {
@@ -31,7 +30,11 @@ export function useFormWithValidation() {
 
             break;
         }
+      } else {
+        setErrors({...errors, [name]: '' });
       }
+    } else {
+      setErrors({...errors, [name]: target.validationMessage });
     }
 
     setIsValid(target.closest("form").checkValidity());
