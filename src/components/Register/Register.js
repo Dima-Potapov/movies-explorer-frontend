@@ -86,7 +86,7 @@ function Register({ resetMessage, onRegister, ...props }) {
           submitName="Зарегистрироваться"
           linkName="Войти"
           linkDestination="/signin"
-          submitDisabled={!isValid}
+          submitDisabled={!isValid || errors.name || errors.password || errors.email}
           errorMessage={errorMessage}
         >
           Уже зарегистрированы?

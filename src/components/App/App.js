@@ -35,7 +35,7 @@ function App() {
             setCurrentUser({name: res.name, email: res.email});
             setIsLoggedIn(true);
 
-            history.push('/movies');
+            // history.push('/movies');
           }
         })
         .catch(err => {

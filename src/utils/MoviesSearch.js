@@ -45,12 +45,8 @@ export const filterMovies = async (searchString, moviesList) => {
 
   const foundMovies = moviesList.filter((movie) => {
     const c1 = checkField(movie.nameRU, string);
-    const c2 = checkField(movie.nameEN, string);
-    const c3 = checkField(movie.director, string);
-    const c4 = checkField(movie.country, string);
-    const c5 = checkField(movie.year, string);
 
-    return (c1 || c2 || c3 || c4 || c5);
+    return (c1);
   });
 
   if (foundMovies.length > 0) return Promise.resolve(foundMovies);

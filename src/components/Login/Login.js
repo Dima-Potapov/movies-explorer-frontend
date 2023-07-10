@@ -62,7 +62,7 @@ function Login({resetMessage, onLogin, history, ...props}) {
           submitName="Войти"
           linkName="Регистрация"
           linkDestination="/signup"
-          submitDisabled={!isValid}
+          submitDisabled={!isValid || errors.password || errors.email}
           errorMessage={errorMessage}
         >
           Ещё не зарегистрированы?

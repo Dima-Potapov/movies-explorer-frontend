@@ -65,10 +65,14 @@ function Movies() {
       setVisibleCardsNumber(visualProps.total)
       setIsMoreVisible(true);
     }
-  }, [foundMovies, visualProps]);
+  }, [visualProps]);
 
   useEffect(
-    () => setShowedMovies(foundMovies.slice(0, visibleCardsNumber)),
+    () => {
+      const foundChecked = addSavedFlag(foundMovies, savedMovies.slice());
+
+      setShowedMovies(foundChecked.slice(0, visibleCardsNumber))
+    },
     [visibleCardsNumber, foundMovies]
   );
 
@@ -92,6 +96,14 @@ function Movies() {
 
     setFoundMovies(showMovies);
 
+    if (showMovies.length <= visualProps.total) {
+      setVisibleCardsNumber(showMovies.length);
+      setIsMoreVisible(false);
+    } else {
+      setVisibleCardsNumber(visualProps.total)
+      setIsMoreVisible(true);
+    }
+
     localStorage.setItem(LS_SWITCH_DURATION, isSwitchOn)
   }, [isSwitchOn]);
 
@@ -110,6 +122,14 @@ function Movies() {
       const foundChecked = addSavedFlag(found, savedMovies.slice());
 
       setFoundMovies(foundChecked);
+
+      if (foundChecked.length <= visualProps.total) {
+        setVisibleCardsNumber(foundChecked.length);
+        setIsMoreVisible(false);
+      } else {
+        setVisibleCardsNumber(visualProps.total)
+        setIsMoreVisible(true);
+      }
 
       localStorage.setItem(LS_FOUND_MOVIES, JSON.stringify(foundChecked));
       localStorage.setItem(LS_SEARCH_STRING, searchString.trim());

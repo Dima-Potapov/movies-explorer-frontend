@@ -22,6 +22,11 @@ export const LS_JWT = 'jwt';
 
 export const PATTERN_NAME = '^[a-zа-я -]+$';
 
+export const visibleCardsNumbers = {
+  1280: { total: 12, add: 3 },
+  768: { total: 8, add: 2 },
+  480: { total: 5, add: 2 },
+};
 
 export const usersApiBaseUrl = 'https://api.dimapotapov.student.nomoredomains.rocks';
 export const authApiBaseUrl = 'https://api.dimapotapov.student.nomoredomains.rocks';

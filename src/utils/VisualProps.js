@@ -1,8 +1,4 @@
-const visibleCardsNumbers = {
-  1280: { total: 12, add: 3 },
-  768: { total: 8, add: 2 },
-  480: { total: 5, add: 2 },
-};
+import { visibleCardsNumbers } from './const';
 
 export const getVisualProps = (width) => {
   let point = 0;

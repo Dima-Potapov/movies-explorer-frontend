@@ -28,10 +28,7 @@ export function useFormWithValidation() {
         case 'name':
           const regex = new RegExp(PATTERN_NAME, "i");
 
-          if (
-            !regex.test(value) ||
-            (value.split(' ').length - 1) > 1
-          ) {
+          if (!regex.test(value)) {
             setErrors({...errors, [name]: NOT_VALID_NAME });
 
             isValid = false;
@@ -45,9 +42,10 @@ export function useFormWithValidation() {
       }
     } else {
       setErrors({...errors, [name]: target.validationMessage });
+      isValid = false;
     }
 
-    setIsValid(target.closest("form").checkValidity() ?? isValid);
+    setIsValid(target.closest("form").checkValidity() ? isValid : false);
   };
 
   const resetForm = useCallback(

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navigation.css';
 
-function Navigation() {
+function Navigation({ children }) {
   return (
     <React.Fragment>
       <NavLink
@@ -20,6 +20,7 @@ function Navigation() {
       >
         Сохранённые фильмы
       </NavLink>
+      {children}
     </React.Fragment>
   );
 }

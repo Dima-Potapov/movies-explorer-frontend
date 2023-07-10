@@ -35,7 +35,7 @@ function Profile({onLogout}) {
     ) && !isValid;
 
     setIsSubmitDisabled(condition1 || condition2);
-  }, [values, currentUser, isValid]);
+  }, [values, currentUser, isValid, errorMessage]);
 
   useEffect(() => {
     const msgName = errors.name ? `Имя: ${errors.name}` : '';
@@ -98,13 +98,12 @@ function Profile({onLogout}) {
             type="text"
             id="name"
             name="name"
-            pattern="^[a-zа-я -]+$"
+            // pattern="^[a-zа-я -]+$"
             className="profile__item profile__text"
             placeholder="Имя"
             value={values.name}
             required
             onChange={handleChange}
-            disabled={true}
           />
 
           <label
@@ -140,7 +139,11 @@ function Profile({onLogout}) {
             {serverErrorMessage}
           </p>
 
-          <Button type="submit" userClass="profile__button" disabled={isSubmitDisabled}>
+          <Button
+            type="submit"
+            userClass="profile__button"
+            disabled={isSubmitDisabled || errors.name || errors.password || errors.email}
+          >
             Редактировать
           </Button>
 
