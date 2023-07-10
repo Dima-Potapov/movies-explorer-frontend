@@ -187,12 +187,12 @@ function Movies() {
           item.movieId === movieId ? newFilm : item
         ));
 
-        setFoundMovies(newFoundMovies);
-
         const newSavedMovies = savedMovies.slice();
 
         newSavedMovies.push(result);
+
         setSavedMovies(newSavedMovies);
+        setFoundMovies(addSavedFlag(newFoundMovies, savedMovies.slice()));
       } else {
         const result = await mainApi.deleteMovie(films[0].saved);
 
@@ -212,11 +212,10 @@ function Movies() {
           item.movieId === movieId ? newFilm : item
         ));
 
-        setFoundMovies(newFoundMovies);
-
         const newSavedMovies = savedMovies.filter((item) => item.movieId !== movieId);
 
         setSavedMovies(newSavedMovies);
+        setFoundMovies(addSavedFlag(newFoundMovies, savedMovies.slice()));
       }
 
       if (localStorage.getItem(LS_FOUND_MOVIES)) localStorage.removeItem('foundMovies');
