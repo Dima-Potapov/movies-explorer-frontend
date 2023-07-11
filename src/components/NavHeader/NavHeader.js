@@ -1,22 +1,17 @@
 import React, {useState} from 'react';
 import Logo from '../Logo/Logo';
 import './NavHeader.css';
-import {NavLink} from "react-router-dom";
-import Button from "../Button/Button";
-import PopupMenu from "../PopupMenu/PopupMenu";
-import Navigation from "../Navigation/Navigation";
+import Button from '../Button/Button';
+import PopupMenu from '../PopupMenu/PopupMenu';
+import Navigation from '../Navigation/Navigation';
 import ProfileButton from '../ProfileButton/ProfileButton';
 
-function NavHeader(props) {
+function NavHeader({ children }) {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  const handleClick = () => {
-    setIsPopupVisible(true);
-  };
+  const handleClick = () => setIsPopupVisible(true);
 
-  const handleClose = () => {
-    setIsPopupVisible(false);
-  };
+  const handleClose = () => setIsPopupVisible(false);
 
   return (
     <header className="NavHeader">
@@ -32,7 +27,7 @@ function NavHeader(props) {
 
         {isPopupVisible && <PopupMenu handleClose={handleClose}/>}
       </div>
-      {props.children}
+      {children}
     </header>
   );
 }

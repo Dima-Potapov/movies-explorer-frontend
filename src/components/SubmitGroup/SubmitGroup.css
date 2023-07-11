@@ -40,6 +40,15 @@
   text-align: center;
 }
 
+.submit-group__error {
+  color: #ee3465;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
 @media screen and (max-width: 320px) {
   .submit-group {
     margin-top: 157px;
