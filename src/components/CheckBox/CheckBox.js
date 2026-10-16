@@ -1,12 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './CheckBox.css';
 
-function CheckBox(props) {
-  const [isChecked, setIsChecked] = useState(props.isChecked);
-
-  const handleChange = (e) => {
-    setIsChecked(e.target.checked);
-  };
+function CheckBox({movieId, isChecked = false, onChange}) {
+  const handleChange = () => onChange(movieId);
 
   return (
     <label className="round-button">

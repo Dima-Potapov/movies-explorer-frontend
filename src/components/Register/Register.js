@@ -1,30 +1,31 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Form from '../Form/Form';
 import Logo from '../Logo/Logo';
 import Input from '../Input/Input';
 import SubmitGroup from '../SubmitGroup/SubmitGroup';
 import '../Login/Login.css';
+import { useFormWithValidation } from '../../hooks/useFormWithValidation';
 
-function Register() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+function Register({ resetMessage, onRegister, ...props }) {
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
+  useEffect(
+    () => resetMessage(),
+    [values]
+  );
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+  useEffect(
+    () => setErrorMessage(props.errorMessage),
+    [props.errorMessage]
+  );
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+  const emptyForm = () => resetForm({ name: '', email: '', password: '' });
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!email || !password) return;
+    event.preventDefault
+    ();
+    onRegister(values.email, values.password, values.name, emptyForm);
   };
 
   return (
@@ -36,35 +37,47 @@ function Register() {
       <Form name="form-register" title="Добро пожаловать!" onSubmit={handleSubmit}>
         <Input
           type="text"
-          id="name" name="name"
-          maxLength="30" minLength="2"
-          placeholder="Имя" required
+          id="name"
+          name="name"
+          // pattern="^[a-zа-я -]+$"
+          placeholder="Имя"
+          required
           errorId="name-error"
-          onChange={handleNameChange}
-          value={name}
+          errorText={errors.name}
+          onChange={handleChange}
+          value={values.name}
         >
           Имя
         </Input>
         <Input
           type="email"
-          id="email" name="email"
-          maxLength="40" minLength="2"
-          placeholder="E-mail" required
+          id="email"
+          name="email"
+          maxLength="40"
+          minLength="2"
+          // pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$"
+          placeholder="E-mail"
+          required
           errorId="email-error"
-          onChange={handleEmailChange}
-          value={email}
+          errorText={errors.email}
+          onChange={handleChange}
+          value={values.email}
         >
           E-mail
         </Input>
 
         <Input
           type="password"
-          id="password" name="password"
-          maxLength="20" minLength="6"
-          placeholder="Пароль" required
+          id="password"
+          name="password"
+          maxLength="20"
+          minLength="6"
+          placeholder="Пароль"
+          required
           errorId="password-error"
-          onChange={handlePasswordChange}
-          value={password}
+          errorText={errors.password}
+          onChange={handleChange}
+          value={values.password}
         >
           Пароль
         </Input>
@@ -73,6 +86,8 @@ function Register() {
           submitName="Зарегистрироваться"
           linkName="Войти"
           linkDestination="/signin"
+          submitDisabled={!isValid || errors.name || errors.password || errors.email}
+          errorMessage={errorMessage}
         >
           Уже зарегистрированы?
         </SubmitGroup>

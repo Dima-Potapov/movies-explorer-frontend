@@ -1,7 +1,7 @@
 import React from 'react';
 import Movies from '../Movies/Movies';
 import Footer from '../Footer/Footer';
-import NavHeader from "../NavHeader/NavHeader";
+import NavHeader from '../NavHeader/NavHeader';
 
 function MoviesPage() {
   return (

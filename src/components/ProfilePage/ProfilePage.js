@@ -1,12 +1,12 @@
 import React from 'react';
 import Profile from '../Profile/Profile';
-import NavHeader from "../NavHeader/NavHeader";
+import NavHeader from '../NavHeader/NavHeader';
 
-function ProfilePage() {
+function ProfilePage({onLogout}) {
   return (
     <React.Fragment>
       <NavHeader />
-      <Profile/>
+      <Profile onLogout={onLogout}/>
     </React.Fragment>
   );
 }
